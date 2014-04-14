@@ -48,6 +48,8 @@ end
 gem "figaro"
 gem "unicorn"
 gem "devise"
+gem 'acts_as_user'
+gem 'annotate'
 
 group :test do
   gem "cucumber-rails", require: false
