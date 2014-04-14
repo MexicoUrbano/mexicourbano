@@ -47,6 +47,8 @@ end
 
 gem "figaro"
 gem "unicorn"
+gem "devise"
+
 group :test do
   gem "cucumber-rails", require: false
   gem "database_cleaner"
