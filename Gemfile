@@ -50,6 +50,7 @@ gem "unicorn"
 gem "devise"
 gem 'acts_as_user'
 gem 'annotate'
+gem "cancan"
 
 group :test do
   gem "cucumber-rails", require: false
