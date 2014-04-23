@@ -36,6 +36,6 @@ class TroopersController < ApplicationController
   private
 
   def trooper_params
-    params.require(:trooper).permit()
+    params.require(:trooper).permit(:name, :email, :password, :password_confirmation)
   end
 end

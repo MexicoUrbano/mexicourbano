@@ -1,0 +1,16 @@
+<h1>Crear niño</h1>
+<%= form_for @kid do |f| %>
+  <div>
+    <%= f.label :name, "Nombre" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :birthdate, "Fecha de Nacimiento" %>
+    <%= f.text_field :birthdate %>
+  </div>
+  <div>
+    <%= f.label :image, "Foto" %>
+    <%= f.file_field :image %>
+  </div>
+  <div><%= f.submit "Envíar" %></div>
+<% end %>

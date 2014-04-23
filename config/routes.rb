@@ -6,6 +6,7 @@ Mexicourbano::Application.routes.draw do
   resources :troopers
   resources :advisors
   resources :admins
+  resources :kids
 
   root to: "pages#landing"
 

@@ -1,0 +1,10 @@
+<% @kids.each do |kid| %>
+  <div>
+    <%= link_to kid do %>
+      <span><%= image_tag kid.image_url, class: "responsive circular polaroid" %></span>
+      <span><%= kid.name %></span>
+      <span><%= kid.age %></span>
+    <% end %>
+  </div>
+<% end %>
+<%= will_paginate @kids %>
