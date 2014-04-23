@@ -1,6 +1,7 @@
 class TroopersController < ApplicationController
+  load_and_authorize_resource
   def new
-    @trooper = Trooper.build
+    @trooper = Trooper.new
   end
   def create
     @trooper = Trooper.build(trooper_params)

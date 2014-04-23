@@ -1,6 +1,7 @@
 class AdvisorsController < ApplicationController
+  load_and_authorize_resource
   def new
-    @advisor = Advisor.build
+    @advisor = Advisor.new
   end
   def create
     @advisor = Advisor.build(advisor_params)

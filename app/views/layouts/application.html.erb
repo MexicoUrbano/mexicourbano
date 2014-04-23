@@ -24,12 +24,12 @@
   <% flash.each do |key, msg| %>
     <%= content_tag :div, msg, id: key %>
   <% end %>
-  <% if user_signed_id? %>
+  <% if user_signed_in? %>
     Bienvenido, <strong><%= current_user.email %></strong>. 
     <%= link_to "Editar Información", edit_user_registration_path %> | 
     <%= link_to "Salir", destroy_user_session_path, method: :delete %>
   <% else %>
-    <%= link_to "Entrar", new_user_registration_path %> | 
+    <%= link_to "Entrar", new_user_session_path %>
   <% end %>
   <%= yield %>
   <%= javascript_include_tag "application" %>

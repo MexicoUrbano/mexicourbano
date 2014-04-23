@@ -1,0 +1,20 @@
+<h1>Crear Brigadista</h1>
+<%= form_for @trooper do |f| %>
+  <div>
+    <%= f.label :name, "Nombre" %>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label :email, "Correo Electrónico" %>
+    <%= f.text_field :email%>
+  </div>
+  <div>
+    <%= f.label :password, "Contraseña" %>
+    <%= f.text_field :password%>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, "Confirmación de Contraseña" %>
+    <%= f.text_field :password_confirmation %>
+  </div>
+  <div><%= f.submit "Envíar" %></div>
+<% end %>

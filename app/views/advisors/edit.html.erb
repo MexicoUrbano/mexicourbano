@@ -1,0 +1,8 @@
+<h1>Editar Asesor</h1>
+<%= form_for @advisor do |f| %>
+  <div>
+    <%= f.label :name, "Nombre" %>
+    <%= f.text_field :name %>
+  </div>
+  <div><%= f.submit "Envíar" %></div>
+<% end %>
