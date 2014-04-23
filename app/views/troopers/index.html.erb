@@ -1,3 +1,4 @@
 <% @troopers.each do |trooper| %>
   <div><%= link_to trooper.name, trooper %></div>
 <% end %>
+<%= will_paginate @troopers %>

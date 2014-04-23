@@ -1,3 +1,4 @@
 <% @advisors.each do |advisor| %>
   <div><%= link_to advisor.name, advisor %></div>
 <% end %>
+<%= will_paginate @advisors %>
