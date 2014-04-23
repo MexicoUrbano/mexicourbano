@@ -51,6 +51,7 @@ gem "devise"
 gem 'acts_as_user'
 gem 'annotate'
 gem "cancan"
+gem 'will_paginate', '~> 3.0'
 
 group :test do
   gem "cucumber-rails", require: false
