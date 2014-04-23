@@ -1,27 +1,37 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <!--includes meta tags, title and more header definitions-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
   <title>Mexicourbano</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+
+  <!-- Furatto core CSS -->
+  <%= stylesheet_link_tag "application", :cache => true %>
+  <%= csrf_meta_tag %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
+
 <body>
-
-<% flash.each do |key, msg| %>
-  <%= content_tag :div, msg, :id => key %>
-<% end %>
-
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> |
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
-
-<%= yield %>
-
+  <% flash.each do |key, msg| %>
+    <%= content_tag :div, msg, id: key %>
+  <% end %>
+  <% if user_signed_id? %>
+    Bienvenido, <strong><%= current_user.email %></strong>. 
+    <%= link_to "Editar Información", edit_user_registration_path %> | 
+    <%= link_to "Salir", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Entrar", new_user_registration_path %> | 
+  <% end %>
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
