@@ -54,6 +54,8 @@ gem "cancan"
 gem 'will_paginate', '~> 3.0'
 gem 'compass-rails', '~> 1.1.3'
 gem 'furatto'
+gem "carrierwave"
+gem 'mini_magick'
 
 group :test do
   gem "cucumber-rails", require: false

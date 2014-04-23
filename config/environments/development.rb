@@ -29,4 +29,9 @@ Mexicourbano::Application.configure do
 
   # Devise Configuration
   config.action_mailer.default_url_options = { host: ENV["URL"] }
+
+  #CarrierWave
+  CarrierWave.configure do |config|
+    config.storage = :file
+  end
 end

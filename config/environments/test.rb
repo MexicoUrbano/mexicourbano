@@ -33,4 +33,13 @@ Mexicourbano::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  #Devise
+  config.action_mailer.default_url_options = {:host => ENV["ROOT_URL"] }
+
+  #CarrierWave
+  CarrierWave.configure do |config|
+    config.storage = :file
+    config.enable_processing = false
+  end
 end

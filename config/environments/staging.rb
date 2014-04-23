@@ -27,7 +27,7 @@ Mexicourbano::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -77,4 +77,23 @@ Mexicourbano::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  #CarrierWave
+  CarrierWave.configure do |config|
+    config.root = Rails.root.join('tmp')
+    config.cache_dir = 'files'
+    config.permissions = 0777
+
+    config.storage = :fog
+    config.fog_credentials = {
+      :provider => 'AWS', # required
+      :aws_access_key_id => ENV["AWS_KEY_ID"], # required
+      :aws_secret_access_key => ENV["AWS_SECRET_KEY"], # required
+    }
+    config.fog_directory = ENV["AWS_BUCKET_NAME"] # required
+    config.fog_public = true
+  end
+
+  #Devise configuration for default url
+  config.action_mailer.default_url_options = { :host => ENV["ROOT_URL"] }
 end
