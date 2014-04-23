@@ -9,4 +9,5 @@
 
 class Advisor < ActiveRecord::Base
   acts_as_user
+  has_many :troopers
 end

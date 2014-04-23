@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  created_at :datetime
 #  updated_at :datetime
+#  advisor_id :integer
 #
 
 require 'spec_helper'
