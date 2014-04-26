@@ -1,5 +1,4 @@
-class AdvisorsController < ApplicationController
-  load_and_authorize_resource
+e  load_and_authorize_resource
   def new
     @advisor = Advisor.new
   end
@@ -18,12 +17,12 @@ class AdvisorsController < ApplicationController
     @advisors = Advisor.page(params[:page]).per_page(30)
   end
   def edit
-    @trooper = Trooper.find(params[:id])
+    @advisor = Advisor.find(params[:id])
   end
   def update
-    @trooper = Trooper.find(params[:id])
-    if @trooper.update_attributes(advisor_params)
-      redirect_to @trooper, notice: "Se ha registrado la modificación"
+    @advisor = Advisor.find(params[:id])
+    if @advisor.update_attributes(advisor_params)
+      redirect_to @advisor, notice: "Se ha registrado la modificación"
     else
       render :edit
     end
