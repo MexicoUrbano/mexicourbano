@@ -1,4 +1,7 @@
-e  load_and_authorize_resource
+class AdvisorsController < ApplicationController
+
+  load_and_authorize_resource
+
   def new
     @advisor = Advisor.new
   end
