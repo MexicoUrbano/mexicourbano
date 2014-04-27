@@ -13,3 +13,13 @@
 
  *= require_tree .
  */
+
+.login-form{
+width: 60%;
+margin: 0px auto;
+}
+.login-logo{
+  width: 302px;
+  height: 159px;
+  margin: 0px auto;
+}
