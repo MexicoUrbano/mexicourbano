@@ -52,8 +52,9 @@ gem 'acts_as_user'
 gem 'annotate'
 gem "cancan"
 gem 'will_paginate', '~> 3.0'
-gem 'compass-rails', '~> 1.1.3'
-gem 'furatto'
+#gem 'compass-rails', '~> 1.1.3'
+#gem 'furatto'
+gem 'foundation-rails'
 gem "carrierwave"
 gem 'mini_magick'
 
