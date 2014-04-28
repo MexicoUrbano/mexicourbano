@@ -17,7 +17,7 @@ class Ability
       can [:edit, :update], Kid do |kid|
         kid.trooper_id = user.userable_id
       end
-      can [:edit, :update], Trooper do |trooper|
+      can :manage, Trooper do |trooper|
         trooper.id == user.userable_id
       end
     end
