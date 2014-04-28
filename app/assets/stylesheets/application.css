@@ -14,7 +14,7 @@
  *= require_tree .
  */
 
-body#app{
+body#sessions{
   background-color: #DBDBDB;
 }
 
@@ -37,4 +37,27 @@ body#app{
 }
 .login-logo{
   margin-top:1em;
+}
+
+.logo img{
+  width:35%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.user{
+  padding:2em;
+}
+#app .content{
+  margin-top:1em;
+  padding-bottom:1em;
+
+	border: 3px solid #c4c4c4;
+	border-color:  #fff #c4c4c4 #c4c4c4 #fff ;
+	background-color: #fff;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-moz-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
 }
