@@ -10,7 +10,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body id="app">
     <% flash.each do |key, msg| %>
       <%= content_tag :div, msg, id: key %>
     <% end %>

@@ -1,8 +1,10 @@
-<div class="login-logo">
-  <img src="<%= asset_path('logo.jpg') %>">
+<div class="row">
+  <div class="login-logo small-4 small-centered columns">
+  <img src="<%= asset_path('logo.png') %>">
+  </div>
 </div>
 <div class="row">
-  <div class="login-form">
+  <div class="login-form func small-6 small-centered columns">
     <h3>México Urbano</h3>
     <hr />
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
