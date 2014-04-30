@@ -1,4 +1,5 @@
 Mexicourbano::Application.routes.draw do
+  get "dashboard/index"
   devise_scope :user do
     get "/users/sign_up",  :to => redirect("/")
   end
@@ -9,6 +10,8 @@ Mexicourbano::Application.routes.draw do
   resources :advisors
   resources :admins
   resources :kids
+  
+  get 'dashboard/' => 'dashboard#index', :as => :dashboard
 
   root to: "pages#landing"
 

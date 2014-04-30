@@ -33,11 +33,12 @@
     </ul>
      <section class="top-bar-section">
        <ul class="left">
-         <li class="active"><a href="#">Dashboard</a></li>
-         <li><a href="#">Asesores</a></li>
-         <li><a href="#">Brigadistas</a></li>
-         <li><a href="#">Alumnos</a></li>
-         <li><a href="#">Encuestas</a></li>
+         <li <%= is_active?("dashboard").html_safe %>><a href="#">Dashboard</a></li>
+         <li <%= is_active?("advisors").html_safe %>><a href="#">Asesores</a></li>
+         <li <%= is_active?("troopers").html_safe %>><a href="#">Brigadistas</a></li>
+         <li <%= is_active?("kids").html_safe %>><a href="#">Niños</a></li>
+         <li <%= is_active?("reports").html_safe %>><a href="#">Reportes</a></li>
+         <li <%= is_active?("logs").html_safe %>><a href="#">Bitacoras</a></li>
        </ul>
      </section>
      </nav>
