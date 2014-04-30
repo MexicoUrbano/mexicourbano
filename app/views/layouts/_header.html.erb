@@ -1,0 +1,44 @@
+
+    <div class="row">
+    <div class="logo small-6 columns">
+      <img src="<%= asset_path('logo.png') %>">
+    </div>
+    <div class="user small-6 columns text-right">
+      Hola <%= current_user.email %>!<br/>
+      <%= link_to "Editar Información", edit_user_registration_path %> | 
+      <%= link_to "Salir", destroy_user_session_path, method: :delete %>
+    </div>
+    </div>
+    
+    <div class="row">
+    <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+     <section class="top-bar-section">
+       <ul class="left">
+         <li <%=raw is_active?("dashboard") %>>
+           <%= link_to 'Dashboard', dashboard_url %>
+         </li>
+         <li <%=raw is_active?("advisors") %>>
+           <%= link_to 'Asesores', advisors_url %>
+         </li>
+         <li <%=raw is_active?("troopers") %>>
+           <%= link_to 'Brigadistas', troopers_url %>
+         </li>
+         <li <%=raw is_active?("kids") %>>
+           <%= link_to 'Niños', kids_url %>
+         </li>
+         <li <%=raw is_active?("reports") %>>
+           <%= link_to 'Reportes', reports_url %>
+         </li>
+         <li <%=raw is_active?("logs") %>>
+           <%= link_to 'Bitacoras', logs_url %>
+         </li>
+       </ul>
+     </section>
+     </nav>
+    </div>

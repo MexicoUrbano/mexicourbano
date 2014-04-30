@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   
   def landing
       if user_signed_in?
-        redirect_to dashboard_url
+        redirect_to reports_path
       else
         redirect_to new_user_session_path
       end
