@@ -23,12 +23,16 @@
          <li <%=raw is_active?("dashboard") %>>
            <%= link_to 'Dashboard', dashboard_url %>
          </li>
+         <% if can? :create, Advisor %>
          <li <%=raw is_active?("advisors") %>>
            <%= link_to 'Asesores', advisors_url %>
          </li>
+         <% end %>
+         <% if can? :create, Trooper %>
          <li <%=raw is_active?("troopers") %>>
            <%= link_to 'Brigadistas', troopers_url %>
          </li>
+         <% end %>
          <li <%=raw is_active?("kids") %>>
            <%= link_to 'Niños', kids_url %>
          </li>
