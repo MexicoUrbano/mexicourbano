@@ -32,6 +32,10 @@ body#sessions{
   box-shadow:3px 3px 15px #C4C4C4;
 }
 
+.alert-box{
+  margin-top: 1em;
+}
+
 .login-form{
   background-color: #FFF;
   margin-top:1.5em;
