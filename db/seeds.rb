@@ -16,8 +16,8 @@ advisors = [
 ]
           
 troopers = [
-            {:email=>"trooper1@trooper1.com", :password=>"mexicourbano"},
-            {:email=>"trooper2@trooper2.com", :password=>"mexicourbano"}
+            {:email=>"trooper1@trooper1.com", :password=>"mexicourbano", :advisor_id=>1, :name=>"Emeregildo Petra"},
+            {:email=>"trooper2@trooper2.com", :password=>"mexicourbano", :advisor_id=>1, :name=>"Israel Perez"}
 ]
 
 admins.each do |attributes|
@@ -41,5 +41,7 @@ troopers.each do |attributes|
   Trooper.create do |t|
     t.email = attributes[:email]
     t.password = attributes[:password]
+    t.advisor_id = attributes[:advisor_id]
+    t.name = attributes[:name]
   end
 end 
