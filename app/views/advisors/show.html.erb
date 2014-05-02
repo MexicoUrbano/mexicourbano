@@ -1,1 +1,33 @@
-Show de advisors
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Asesor</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <h3><strong>Datos Personales</strong></h3>
+    <p><strong>Nombre:</strong> <%= @advisor.name %></p>
+    <p><strong>Correo:</strong> <%= @advisor.email %></p>
+    <p><strong>Telefono:</strong> <%= @advisor.telefono %> </p>
+    <p><strong>Comunidad:</strong> <%= @advisor.community%></p>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <h3><strong>Brigadistas</strong></h3>
+    <% if @advisor.troopers.count == 0 %>
+      <p>Este asesor no tiene ningun brigadista asignado</p>
+    <% end %>
+    <ul>
+      <% @advisor.troopers.each do |trooper| %>
+      <li><%= link_to trooper_path(trooper) do %><%= trooper.name %><% end %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to "Editar", edit_advisor_path(@advisor), :class=>"button small"%>
+    <%= link_to "Eliminar", advisor_path(@advisor), :method=>:delete, :confirm=>"¿Estas seguro que quieres eliminar este asesor?", :class=>"button small alert"%>
+  </div>
+</div>

@@ -23,8 +23,10 @@
         </div>
       </div>
     <% end %>
-    <div class="row content">
-    <%= yield %>
+    <div class="row">
+      <div class="small-12 columns content">
+        <%= yield %>
+      </div>
     </div>
     <%= javascript_include_tag "application" %>
   </body>
