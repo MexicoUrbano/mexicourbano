@@ -11,13 +11,13 @@ admins = [
 ]
           
 advisors = [
-            {:email=>"advisor1@advisor1.com", :password=>"mexicourbano"},
-            {:email=>"advisor2@advisor2.com", :password=>"mexicourbano"}
+            {:email=>"advisor1@advisor1.com", :password=>"mexicourbano", :name=>"Juan Perez", :phone=>"664-661-12-50", :community=>"Santiago"},
+            {:email=>"advisor2@advisor2.com", :password=>"mexicourbano", :name=>"Miguel Martinez", :phone=>"554-323-23-40", :community=>"Guadalupe"}
 ]
           
 troopers = [
-            {:email=>"trooper1@trooper2.com", :password=>"mexicourbano"},
-            {:email=>"trooper1@trooper.com", :password=>"mexicourbano"}
+            {:email=>"trooper1@trooper1.com", :password=>"mexicourbano"},
+            {:email=>"trooper2@trooper2.com", :password=>"mexicourbano"}
 ]
 
 admins.each do |attributes|
@@ -31,6 +31,9 @@ advisors.each do |attributes|
   Advisor.create do |a|
     a.email = attributes[:email]
     a.password = attributes[:password]
+    a.name = attributes[:name]
+    a.phone = attributes[:phone]
+    a.community = attributes[:community]
   end
 end   
 
