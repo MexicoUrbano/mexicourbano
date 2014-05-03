@@ -16,7 +16,7 @@ class AdvisorsController < ApplicationController
     @advisor = Advisor.find(params[:id])
   end
   def index
-    @advisors = Advisor.page(params[:page]).per_page(30)
+    @advisors = Advisor.all
   end
   def edit
     @advisor = Advisor.find(params[:id])

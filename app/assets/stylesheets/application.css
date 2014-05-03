@@ -69,3 +69,7 @@ body#sessions{
 #app .content .row h3{
   font-size:1.365em;
 }
+
+.opciones_tabla{
+  text-align: center;
+}
