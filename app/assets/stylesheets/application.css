@@ -73,3 +73,7 @@ body#sessions{
 .opciones_tabla{
   text-align: center;
 }
+
+.dataTables_wrapper {
+  margin-top: 1em;
+}
