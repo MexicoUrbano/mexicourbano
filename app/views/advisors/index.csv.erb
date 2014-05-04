@@ -1,3 +1,4 @@
+nombre,correo,telefono,comunidad
 <% @advisors.each do |advisor| %>
-<%= advisor.name %>,<%= advisor.telefono %>,<%= advisor.community %>
+<%= advisor.name %>,<%= advisor.email %>,<%= advisor.telefono %>,"<%= advisor.community %>"
 <% end %>
