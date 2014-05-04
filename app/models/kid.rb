@@ -21,6 +21,10 @@ class Kid < ActiveRecord::Base
             
   mount_uploader :image, ImageUploader
   belongs_to :trooper
+  
+  def community
+    trooper.advisor.community
+  end
 
   def grade_name
     GRADOS[grade-1] # 3 => Tercero  

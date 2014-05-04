@@ -15,7 +15,7 @@ class KidsController < ApplicationController
     @kid = Kid.find(params[:id])
   end
   def index
-    @kids = Kid.page(params[:page]).per_page(30)
+    @kids = Kid.all
   end
   def edit
     @kid = Kid.find(params[:id])
