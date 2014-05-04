@@ -14,7 +14,9 @@
     <% if @kid.trooper %>
     <p><strong>Comunidad:</strong> <%= @kid.community %></p>
     <p><strong>Brigadista:</strong> <%= link_to @kid.trooper.name, trooper_path(@kid.trooper.id)%></p>
-    <p><strong>Asesor:</strong> <%= link_to @kid.trooper.advisor.name, advisor_path(@kid.trooper.advisor.id) %></p>
+      
+        <p><strong>Asesor:</strong> <% if @kid.trooper.advisor %><%= link_to @kid.trooper.advisor.name, advisor_path(@kid.trooper.advisor.id) %><%else%> N/A <%end%>
+</p>
     <% else %>
     <p><strong>Este niño no tiene un brigadista asignado aún</strong></p>
     <% end %>

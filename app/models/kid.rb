@@ -37,8 +37,8 @@ class Kid < ActiveRecord::Base
   end
   
   def community
-    if self.trooper
-      trooper.advisor.community
+    if self.trooper && self.trooper.advisor
+      self.trooper.advisor.community
     else
       "N/A"
     end
