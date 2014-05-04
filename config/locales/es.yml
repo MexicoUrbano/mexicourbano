@@ -8,6 +8,10 @@ es:
         email: "Correo"
         phone: "Teléfono"
         password: "Contraseña"
+      kid:
+        grade: "Grado Escolar"
+        name: "Nombre"
+        birthdate: "Fecha de Nacimiento"
   errors:
     messages:
       too_short: "muy corto"

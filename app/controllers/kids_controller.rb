@@ -4,7 +4,7 @@ class KidsController < ApplicationController
     @kid = Kid.new
   end
   def create
-    @kid = Kid.build(kid_params)
+    @kid = Kid.create(kid_params)
     if @kid.save
       redirect_to @kid, notice: "Niño creado exitosamente"
     else
@@ -15,7 +15,11 @@ class KidsController < ApplicationController
     @kid = Kid.find(params[:id])
   end
   def index
-    @kids = Kid.page(params[:page]).per_page(30)
+    if can? :destroy, Kid
+      @kids = Kid.all
+    else #ONLY the trooper can't remove kids
+      @kids = Kid.where(:trooper_id=>current_user.userable_id)
+    end
   end
   def edit
     @kid = Kid.find(params[:id])
@@ -30,12 +34,12 @@ class KidsController < ApplicationController
   end
   def destroy
     Kid.find(params[:id]).destroy
-    redirect_to kid_path, notice: "Se ha eliminado el niño"
+    redirect_to kids_path, notice: "Se ha eliminado el niño"
   end
 
   private
 
   def kid_params
-    params.require(:kid).permit(:image, :name, :birthdate)
+    params.require(:kid).permit(:image, :name, :birthdate, :grade, :trooper_id)
   end
 end
