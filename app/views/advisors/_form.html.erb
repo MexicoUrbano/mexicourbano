@@ -21,20 +21,18 @@
     </fieldset>
   </div>
   <div class="small-12 medium-6 columns">
-    <h3><strong>Brigadistas</strong></h3>
-    <% if @advisor.troopers.count == 0 %>
-      <p>Este asesor no tiene ningun brigadista asignado</p>
-    <% end %>
-    <ul>
-      <% @advisor.troopers.each do |trooper| %>
-        <li><%= link_to trooper_path(trooper) do %><%= trooper.name %><% end %></li>
+    <fieldset>
+      <h3><strong>Seleccionar Brigadistas</strong></h3>
+      <% if @advisor.troopers.count == 0 %>
+        <p>Este asesor no tiene ningun brigadista asignado aún.</p>
       <% end %>
-    </ul>
+      <%= f.select :trooper_ids, Trooper.all.collect {|t| [t.name, t.id]}, { include_blank: true},:multiple => true, :class=> 'chosen-select-deselect', "data-placeholder" => "Haz click para seleccionar brigadistas"  %>
+    </fieldset>
   </div>
 </div>
 <div class="row">
   <div class="small-12 columns">
-    <%= f.submit "Editar", :class=>"button small"%>
+    <%= f.submit "Guardar", :class=>"button small"%>
     <%= link_to "Cancelar", :back , :class=>"button small secondary"%>
   </div>
 </div>

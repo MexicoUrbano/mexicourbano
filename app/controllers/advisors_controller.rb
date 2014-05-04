@@ -37,6 +37,6 @@ class AdvisorsController < ApplicationController
   private
 
   def advisor_params
-    params.require(:advisor).permit(:name, :email, :password_temp, :password, :password_confirmation, :community, :phone)
+    params.require(:advisor).permit(:name, :email, :password_temp, :password, :password_confirmation, :community, :phone, :trooper_ids => [])
   end
 end

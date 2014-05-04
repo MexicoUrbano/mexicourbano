@@ -60,6 +60,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'foundation-rails'
 gem "carrierwave"
 gem 'mini_magick'
+gem 'chosen-rails', '~> 1.1.0'
 
 group :test do
   gem "cucumber-rails", require: false
