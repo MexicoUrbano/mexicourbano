@@ -14,7 +14,7 @@ class Ability
         advisor.id == user.userable_id
       end
     elsif user.trooper?
-      can :manage, Kid do |kid|
+      can [:read, :edit, :update, :create], Kid do |kid|
         kid.trooper_id = user.userable_id
       end
       can [:read, :edit, :update], Trooper do |trooper|

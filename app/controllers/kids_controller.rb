@@ -15,7 +15,11 @@ class KidsController < ApplicationController
     @kid = Kid.find(params[:id])
   end
   def index
-    @kids = Kid.all
+    if can? :destroy, Kid
+      @kids = Kid.all
+    else #ONLY the trooper can't remove kids
+      @kids = Kid.where(:trooper_id=>current_user.userable_id)
+    end
   end
   def edit
     @kid = Kid.find(params[:id])
