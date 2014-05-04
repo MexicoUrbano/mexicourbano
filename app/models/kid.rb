@@ -29,6 +29,15 @@ class Kid < ActiveRecord::Base
       "N/A"
     end
   end
+  
+  def photo_html
+    if self.image.to_s.empty?
+      url = "http://placehold.it/250x250"
+    else
+      url = self.image
+    end
+    "<img class='th' src='#{url}'/>"
+  end
 
   def grade_name
     GRADOS[grade-1] # 3 => Tercero  
