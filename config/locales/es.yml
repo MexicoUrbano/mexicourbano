@@ -1,0 +1,20 @@
+es:
+  activerecord:
+    attributes:
+      user:
+        email: "Correo"
+        password: "Contraseña"
+      advisor:
+        email: "Correo"
+        phone: "Teléfono"
+        password: "Contraseña"
+  errors:
+    messages:
+      too_short: "muy corto"
+      invalid: "no valido"
+      blank: "esta en blanco"
+      taken: "ya existe"
+      not_a_number: "no es un número"
+    attributes:
+      phone:
+        too_short: "muy corto. Minimo 10 numeros. (lada + número) 664-661-1250"
