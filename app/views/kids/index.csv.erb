@@ -1,0 +1,3 @@
+<% @kids.each do |kid| %>
+<%= kid.name %>,<%= kid.age %>,<%= kid.grade %>,"<%= kid.trooper ? kid.community : "N/A" %>",<%= kid.trooper ? kid.trooper.name : "N/A" %>,<%= kid.trooper ? kid.trooper.advisor.name : "N/A"%>
+<% end %>

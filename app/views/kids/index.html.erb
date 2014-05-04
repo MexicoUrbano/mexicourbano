@@ -29,7 +29,7 @@
               <%= link_to "#{ fa_icon 'eye'} Ver".html_safe, kid_path(kid), :class=>"button small" %>
               <%= link_to "#{ fa_icon 'pencil'} Editar".html_safe, edit_kid_path(kid), :class=>"button small" %>
               <% if can? :destroy, Kid %>              
-                <%= link_to "#{ fa_icon 'trash-o'} Eliminar".html_safe, kid_path(kid), :method=>"delete", :confirm=>"¿Estas seguro que quieres eliminar este niños?", :class=>"button small alert"%>
+                <%= link_to "#{ fa_icon 'trash-o'} Eliminar".html_safe, kid_path(kid), :method=>"delete", :confirm=>"¿Estas seguro que quieres eliminar este niño?", :class=>"button small alert"%>
               <% end %>
               </div>
             </td>

@@ -23,7 +23,11 @@ class Kid < ActiveRecord::Base
   belongs_to :trooper
   
   def community
-    trooper.advisor.community
+    if self.trooper
+      trooper.advisor.community
+    else
+      "N/A"
+    end
   end
 
   def grade_name
