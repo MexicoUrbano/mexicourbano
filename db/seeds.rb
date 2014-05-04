@@ -11,8 +11,8 @@ admins = [
 ]
           
 advisors = [
-            {:email=>"advisor1@advisor1.com", :password=>"mexicourbano", :name=>"Juan Perez", :phone=>"664-661-12-50", :community=>"Santiago"},
-            {:email=>"advisor2@advisor2.com", :password=>"mexicourbano", :name=>"Miguel Martinez", :phone=>"554-323-23-40", :community=>"Guadalupe"}
+            {:email=>"advisor1@advisor1.com", :password=>"mexicourbano", :name=>"Juan Perez", :phone=>"664-661-12-50", :community=>"Loma Alta, Linares"},
+            {:email=>"advisor2@advisor2.com", :password=>"mexicourbano", :name=>"Miguel Martinez", :phone=>"554-323-23-40", :community=>"El Galeme, Montemorelos"}
 ]
           
 troopers = [
