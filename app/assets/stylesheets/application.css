@@ -77,3 +77,13 @@ body#sessions{
 .dataTables_wrapper {
   margin-top: 1em;
 }
+.infohelper {
+  font-style: italic;
+  position: relative;
+  color: #7F7F7F;
+  top: -1.6em;
+  display: block;
+  padding: 0.375rem 0.5625rem 0.5625rem;
+  background-color: #eee;
+  font-size: .62em;
+}

@@ -5,7 +5,7 @@ class AdvisorsController < ApplicationController
     @advisor = Advisor.new
   end
   def create
-    @advisor = Advisor.build(advisor_params)
+    @advisor = Advisor.create(advisor_params)
     if @advisor.save
       redirect_to @advisor, notice: "Asesor creado exitosamente"
     else
@@ -37,6 +37,6 @@ class AdvisorsController < ApplicationController
   private
 
   def advisor_params
-    params.require(:advisor).permit(:name, :email, :password, :password_confirmation, :community, :phone)
+    params.require(:advisor).permit(:name, :email, :password_temp, :password, :password_confirmation, :community, :phone)
   end
 end

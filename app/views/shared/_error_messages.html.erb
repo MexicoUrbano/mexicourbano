@@ -1,0 +1,13 @@
+<% if objeto.errors.any? %>
+  <div class="row">
+    <div class="small-12 columns">
+      <h3 class="red">Ups! Se generaron <%= pluralize(objeto.errors.count, "errores") %></h3>
+        <% objeto.errors.full_messages.each do |msg| %>
+          <div data-alert class="alert-box alert">
+            <%= msg %>
+            <a href="#" class="close">&times;</a>
+          </div>
+        <% end %>
+    </div>
+  </div>
+<% end %>
