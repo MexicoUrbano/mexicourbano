@@ -7,7 +7,7 @@
       <h3><strong>Datos Personales</strong></h3>
       <p><strong><%= f.label :name, "Nombre:" %></strong> <%= f.text_field :name %></p>
       <p><strong><%= f.label :phone, "Teléfono:" %></strong> <%= f.text_field :phone %> </p>
-      <p><strong><%= f.label :community, "Comunidad" %></strong> <%= f.text_field :community %></p>
+      <p><strong><%= f.label :community, "Comunidad "%></strong> <%= f.select :community, Advisor.communities.collect {|c| [c]}, { include_blank: true} %>
     </fieldset>
     <fieldset>
       <h3><strong>Credenciales de Acceso</strong></h3>
