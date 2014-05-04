@@ -4,7 +4,7 @@ class TroopersController < ApplicationController
     @trooper = Trooper.new
   end
   def create
-    @trooper = Trooper.build(trooper_params)
+    @trooper = Trooper.create(trooper_params)
     if @trooper.save
       redirect_to @trooper, notice: "Brigadista creado exitosamente"
     else
@@ -15,7 +15,7 @@ class TroopersController < ApplicationController
     @trooper = Trooper.find(params[:id])
   end
   def index
-    @troopers = Trooper.page(params[:page]).per_page(30)
+    @troopers = Trooper.all
   end
   def edit
     @trooper = Trooper.find(params[:id])
@@ -36,6 +36,6 @@ class TroopersController < ApplicationController
   private
 
   def trooper_params
-    params.require(:trooper).permit(:name, :email, :password, :password_confirmation)
+    params.require(:trooper).permit(:name, :student_number, :semester, :email, :password_temp, :password, :password_confirmation, :advisor_id, :kid_ids => [])
   end
 end
