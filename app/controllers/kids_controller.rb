@@ -4,7 +4,7 @@ class KidsController < ApplicationController
     @kid = Kid.new
   end
   def create
-    @kid = Kid.build(kid_params)
+    @kid = Kid.create(kid_params)
     if @kid.save
       redirect_to @kid, notice: "Niño creado exitosamente"
     else
@@ -40,6 +40,6 @@ class KidsController < ApplicationController
   private
 
   def kid_params
-    params.require(:kid).permit(:image, :name, :birthdate, :grade)
+    params.require(:kid).permit(:image, :name, :birthdate, :grade, :trooper_id)
   end
 end

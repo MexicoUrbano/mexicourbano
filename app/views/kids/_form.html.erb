@@ -1,0 +1,34 @@
+<%= render 'shared/error_messages', :objeto => @kid %>
+
+<%= form_for @kid do |f| %>
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <fieldset>
+      <h3><strong>Datos Personales</strong></h3>
+      <p><strong><%= f.label :name, "Nombre:" %></strong> <%= f.text_field :name %></p>
+      <p><strong><%= f.label :birthdate, "Fecha de Nacimiento:" %></strong> <%= f.date_field :birthdate %> </p>
+      <p><strong><%= f.label :grade, "Grado Escolar "%></strong> <%= f.select :grade, Kid.grades_collection, { include_blank: true} %>
+    </fieldset>
+    <fieldset>
+      <h3><strong>Fotografia</strong></h3>
+      <p><%=raw @kid.photo_html :small %></p>      
+      <p><%= f.label :image, "Imagen: "%><%= f.file_field :image %></p>
+    </fieldset>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <fieldset>
+      <h3><strong>Seleccionar Brigadista</strong></h3>
+      <% if @kid.trooper.to_s.empty? %>
+        <p>Este niño no tiene ningun brigadista asignado aún.</p>
+      <% end %>
+      <%= f.select :trooper_id, Trooper.all.collect {|t| [t.name, t.id]}, { include_blank: true}, :class=> 'chosen-select-deselect', "data-placeholder" => "Haz click para seleccionar el brigadista"  %>
+    </fieldset>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= f.submit "Guardar", :class=>"button small"%>
+    <%= link_to "Cancelar", :back , :class=>"button small secondary"%>
+  </div>
+</div>
+<% end %>

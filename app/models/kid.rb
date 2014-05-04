@@ -18,9 +18,23 @@ class Kid < ActiveRecord::Base
             'Cuarto',
             'Quinto',
             'Sexto']
-            
+           
   mount_uploader :image, ImageUploader
   belongs_to :trooper
+  
+  validates :grade, :presence => true
+  validates :name, :presence => true
+  validates :birthdate, :presence => true
+  
+  def self.grades
+    GRADOS
+  end
+  
+  def self.grades_collection
+    gc = Array.new
+    GRADOS.each_with_index { |grado,index| gc << [grado, index+1]}
+    gc
+  end
   
   def community
     if self.trooper
@@ -30,13 +44,17 @@ class Kid < ActiveRecord::Base
     end
   end
   
-  def photo_html
+  def photo_html size=:normal
     if self.image.to_s.empty?
       url = "http://placehold.it/250x250"
     else
       url = self.image
     end
-    "<img class='th' src='#{url}'/>"
+    if size==:normal
+      "<img class='th' src='#{url}'/>"
+    else
+      "<img width='125px' height='125px' class='th' src='#{url}'/>"
+    end
   end
 
   def grade_name
