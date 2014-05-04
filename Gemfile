@@ -10,6 +10,8 @@ gem 'pg'
 # Jquery Datatable Rails
 gem 'jquery-datatables-rails', '~> 1.12.2'
 
+gem 'font-awesome-rails', '~> 4.0.3.2'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

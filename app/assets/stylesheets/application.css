@@ -11,6 +11,7 @@
  *= require_self
  *= require foundation_and_overrides
  *= require foundation
+ *= require font-awesome
  *= require dataTables/jquery.dataTables.foundation
  *= require chosen
  *= require_tree .
