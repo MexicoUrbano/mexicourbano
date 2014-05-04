@@ -1,8 +1,7 @@
-<h1>Editar Brigadista</h1>
-<%= form_for @trooper do |f| %>
-  <div>
-    <%= f.label :name, "Nombre" %>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Editar Brigadista</h2>
   </div>
-  <div><%= f.submit "Envíar" %></div>
-<% end %>
+</div>
+
+<%= render 'form' %>

@@ -9,15 +9,15 @@
 admins = [
             {:email=>"admin@admin.com", :password=>"mexicourbano"}
 ]
-          
+
 advisors = [
             {:email=>"advisor1@advisor1.com", :password=>"mexicourbano", :name=>"Juan Perez", :phone=>"664-661-12-50", :community=>"Loma Alta, Linares"},
             {:email=>"advisor2@advisor2.com", :password=>"mexicourbano", :name=>"Miguel Martinez", :phone=>"554-323-23-40", :community=>"El Galeme, Montemorelos"}
 ]
-          
+
 troopers = [
-            {:email=>"trooper1@trooper1.com", :password=>"mexicourbano", :advisor_id=>1, :name=>"Emeregildo Petra"},
-            {:email=>"trooper2@trooper2.com", :password=>"mexicourbano", :advisor_id=>1, :name=>"Israel Perez"}
+            {:email=>"trooper1@trooper1.com", :password=>"mexicourbano", :advisor_id=>1, :name=>"Emeregildo Petra", :student_number=> "A02910831", :semester=> 4},
+            {:email=>"trooper2@trooper2.com", :password=>"mexicourbano", :advisor_id=>1, :name=>"Israel Perez", :student_number=>"A04514268", :semester=> 3}
 ]
 
 admins.each do |attributes|
@@ -35,7 +35,7 @@ advisors.each do |attributes|
     a.phone = attributes[:phone]
     a.community = attributes[:community]
   end
-end   
+end
 
 troopers.each do |attributes|
   Trooper.create do |t|
@@ -43,5 +43,7 @@ troopers.each do |attributes|
     t.password = attributes[:password]
     t.advisor_id = attributes[:advisor_id]
     t.name = attributes[:name]
+    t.student_number = attributes[:student_number]
+    t.semester = attributes[:semester]
   end
-end 
+end

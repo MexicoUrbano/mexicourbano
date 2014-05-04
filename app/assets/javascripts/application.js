@@ -21,12 +21,6 @@ $(function(){ $(document).foundation(); });
 
 $('.datatable').dataTable({
   "sPaginationType": "foundation",
-  "aoColumns": [
-    {"sWidth": "29%"},
-    {"sWidth": "18%"},
-    {"sWidth": "18%"},
-    {"sWidth": "35%"}
-  ],
   "oLanguage": {
     "sProcessing":     "Procesando...",
     "sLengthMenu":     "Mostrar _MENU_ registros",

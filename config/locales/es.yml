@@ -8,9 +8,17 @@ es:
         email: "Correo"
         phone: "Teléfono"
         password: "Contraseña"
+      trooper:
+        password: "Contraseña"
+        student_number: "Matrícula"
+        advisor_id: "Asesor"
+        email: "Correo"
+        name: "Nombre"
+        semester: "Semestre"
+
   errors:
     messages:
-      too_short: "muy corto"
+      too_short: "muy corta"
       invalid: "no valido"
       blank: "esta en blanco"
       taken: "ya existe"
@@ -18,3 +26,10 @@ es:
     attributes:
       phone:
         too_short: "muy corto. Minimo 10 numeros. (lada + número) 664-661-1250"
+      student_number:
+        invalid: "no valida"
+      advisor_id:
+        blank: "esta en blanco. Un brigadista tiene que tener un Asesor."
+      semester:
+        greater_than: "tiene que empezar en 1"
+        less_than_or_equal_to: "tiene que ser menor o igual a 12"
