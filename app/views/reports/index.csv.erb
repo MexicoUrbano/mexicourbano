@@ -1,4 +1,4 @@
-Semana,Brigadista,Niño,Asistencia,Calificación,Observaciones,Actividades
+Semana,Niño,Brigadista,Asesor,Comunidad,Asistencia,Calificación,Observaciones
 <% @reports.each do |report| %>
-<%= report.week %>,<%= report.trooper.present? ? report.trooper.name : "N/A" %>,<%= report.kid.name %>,"<%= report.assistance %>",<%= report.grade %>,<%= report.general_observations %>,<%= report.activities %>
+<%= report.week %>,<%= report.kid.name %>,<%= report.trooper.present? ? report.trooper.name : "N/A" %>,<%= report.trooper.advisor.name %>,"<%= report.trooper.advisor.community %>",<%= report.assistance %>,<%= report.grade %>,<%= report.general_observations %>
 <% end %>
