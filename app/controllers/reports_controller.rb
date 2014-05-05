@@ -3,9 +3,9 @@ class ReportsController < ApplicationController
     if current_user.admin?
       @reports = Report.all
     elsif current_user.advisor?
-       @reports = Report.where(kid_id: Kid.where(trooper_id: current_user.troopers.pluck(:id)).pluck(:id))
+       @reports = Report.where(kid_id: Kid.where(trooper_id: current_user.userable.troopers.pluck(:id)).pluck(:id))
     elsif current_user.trooper?
-      @reports = Report.where(kid_id: current_user.kids.pluck(:id))
+      @reports = Report.where(kid_id: current_user.userable.kids.pluck(:id))
     end
   end
 
