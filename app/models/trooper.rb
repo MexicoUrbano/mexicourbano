@@ -6,7 +6,7 @@
 #  created_at     :datetime
 #  updated_at     :datetime
 #  advisor_id     :integer
-#  student_number :string
+#  student_number :string(255)
 #  semester       :integer
 #
 
@@ -14,6 +14,7 @@ class Trooper < ActiveRecord::Base
   acts_as_user
   belongs_to :advisor
   has_many :kids
+  has_many :reports
 
   validates :semester, :numericality => {less_than_or_equal_to: 12, greater_than: 0}
   validates :student_number, :format => {:with => /\AA\d{8}\Z/}

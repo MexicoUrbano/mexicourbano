@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504052734) do
+ActiveRecord::Schema.define(version: 20140505055226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: true do |t|
+    t.integer  "report_id"
+    t.text     "objective"
+    t.string   "grade"
+    t.text     "observation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "admins", force: true do |t|
     t.datetime "created_at"
@@ -38,6 +47,17 @@ ActiveRecord::Schema.define(version: 20140504052734) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "grade"
+  end
+
+  create_table "reports", force: true do |t|
+    t.boolean  "assistance"
+    t.text     "general_observations"
+    t.string   "grade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "trooper_id"
+    t.integer  "kid_id"
+    t.integer  "week"
   end
 
   create_table "troopers", force: true do |t|

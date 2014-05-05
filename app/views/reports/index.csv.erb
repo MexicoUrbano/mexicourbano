@@ -1,0 +1,4 @@
+Semana,Brigadista,Niño,Asistencia,Calificación,Observaciones,Actividades
+<% @reports.each do |report| %>
+<%= report.week %>,<%= report.trooper.present? ? report.trooper.name : "N/A" %>,<%= report.kid.name %>,"<%= report.assistance %>",<%= report.grade %>,<%= report.general_observations %>,<%= report.activities %>
+<% end %>

@@ -9,6 +9,7 @@
 #  trooper_id :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  grade      :integer
 #
 
 require 'spec_helper'

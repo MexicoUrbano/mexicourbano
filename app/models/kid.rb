@@ -9,6 +9,7 @@
 #  trooper_id :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  grade      :integer
 #
 
 class Kid < ActiveRecord::Base
@@ -21,6 +22,7 @@ class Kid < ActiveRecord::Base
            
   mount_uploader :image, ImageUploader
   belongs_to :trooper
+  has_many :reports
   
   validates :grade, :presence => true
   validates :name, :presence => true

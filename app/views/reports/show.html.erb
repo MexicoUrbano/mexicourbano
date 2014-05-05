@@ -1,2 +1,46 @@
-<h1>Reports#show</h1>
-<p>Find me in app/views/reports/show.html.erb</p>
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Reporte</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <h3><strong>Datos Generales</strong></h3>
+    <p><strong>Niño:</strong> <%= @report.kid.name %></p>
+    <p><strong>Brigadista:</strong> <%= @report.trooper.present? ? @report.trooper.name : "N/A" %></p>
+    <p><strong>Semana:</strong> <%= @report.week %></p>
+    <p><strong>Asistencia:</strong> <%= @report.assistance ? "Si" : "No" %></p>
+    <p><strong>Calificación:</strong> <%= @report.grade %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <strong>Observaciones generales</strong><br />
+    <p><%= @report.general_observations %></p>
+  </div>
+</div>
+<% if @report.activities.present? %>
+  <div class="row">
+    <div class="small-12 medium-12 columns">
+      <h3><strong>Actividades</strong></h3>
+      <% @report.activities.each do |activity| %>
+        <hr />
+        <div class="small-12 medium-12 columns">
+          <p><strong>Objetivo:</strong> <%= activity.objective %></p>
+          <p><strong>Calificación:</strong> <%= activity.grade %></p>
+          <strong>Observaciones:</strong><br />
+          <p><%= activity.observation %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to "Editar", edit_report_path(@report), :class=>"button small"%>
+    <% if can? :destroy, @report %>
+      <%= link_to "Eliminar", report_path(@report), :method=>:delete, :confirm=>"¿Estas seguro que quieres eliminar este reporte?", :class=>"button small alert"%>
+    <% end %>
+  </div>
+</div>
