@@ -13,4 +13,6 @@
 
 class Activity < ActiveRecord::Base
   belongs_to :report
+
+  validates :objective, presence: true
 end
