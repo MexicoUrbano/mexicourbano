@@ -33,7 +33,7 @@ class ReportsController < ApplicationController
 
   def create
     if current_user.trooper?
-      @report = current_user.new(report_params)
+      @report = current_user.reports.new(report_params)
     else
       @report = Report.new(report_params)
       @report.trooper_id = @report.kid.trooper_id
@@ -48,7 +48,7 @@ class ReportsController < ApplicationController
 
   def new
     if current_user.trooper?
-      @report = current_user.new
+      @report = current_user.reports.new
     else
       @report = Report.new
     end
