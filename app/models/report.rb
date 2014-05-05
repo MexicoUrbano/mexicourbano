@@ -27,7 +27,7 @@ class Report < ActiveRecord::Base
   def validate_uniqueness
     query_id = id || 0
     errors.add(:report, 'El reporte de esta semana para este niño ya fue creado')
-    return !where("week = ? and trooper_id = ? and kid_id = ? and id != ?", week, trooper_id, kid_id, query_id).exists?
+    return !Report.where("week = ? and trooper_id = ? and kid_id = ? and id != ?", week, trooper_id, kid_id, query_id).exists?
   end
 end
 
