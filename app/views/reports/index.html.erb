@@ -16,8 +16,6 @@
         <th>Brigadista</th>
         <th>Calificación</th>
         <th>Asistencia</th>
-        <th>Observaciones</th>
-        <th>Número de actividades</th>
         <th>Opciones</th>
       </thead>
       <tbody>
@@ -28,8 +26,6 @@
             <td><%= report.trooper.present? ? report.trooper.name : "N/A" %></td>
             <td><%= report.grade %></td>
             <td><%= report.assistance ? "Si" : "No" %></td>
-            <td><%= report.general_observations %></td>
-            <td><%= report.activities.count %></td>
             <td>
               <div class="opciones_tabla">
               <%= link_to "#{ fa_icon 'eye'} Ver".html_safe, report_path(report), :class=>"button small" %>
