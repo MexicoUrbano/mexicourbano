@@ -1,9 +1,0 @@
-<% if can? :view, @admin %>
-  <h1><%= @admin.name %></h1>
-  <div>
-    <div><%= link_to "Crear Brigadista", new_trooper_path %></div>
-    <div><%= link_to "Crear Asesor", new_advisor_path %></div>
-    <div><%= link_to "Lista de Bigadistas", troopers_path %></div>
-    <div><%= link_to "Lista de Asesores", advisors_path %></div>
-  </div>
-<% end %>

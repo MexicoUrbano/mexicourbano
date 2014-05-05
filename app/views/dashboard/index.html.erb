@@ -1,2 +1,36 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<h1>Dashboard</h1>
+<div class="row dashboard-content">
+  <div class="small-12 large-4 columns type-section">
+    <div class="">
+      <%= link_to troopers_path do %>
+        <i class="fa fa-flag fa-5x"></i>
+        <span>Bigadistas</span>
+      <% end %>
+    </div>
+    <div class="">
+      <%= link_to "crear", new_trooper_path %>
+    </div>
+  </div>
+  <div class="small-12 large-4 columns type-section">
+    <div class="">
+      <%= link_to advisors_path do %>
+        <i class="fa fa-gavel fa-5x"></i>
+        <span>Asesores</span>
+      <% end %>
+    </div>
+    <div class="">
+      <%= link_to "crear", new_advisor_path %>
+    </div>
+  </div>
+  <div class="small-12 large-4 columns type-section">
+    <div class="">
+      <%= link_to kids_path do %>
+        <i class="fa fa-rocket fa-5x"></i>
+        <span>Niños</span>
+      <% end %>
+    </div>
+    <div class="">
+      <%= link_to "crear", new_kid_path %>
+    </div>
+  </div>
+</div>

@@ -3,17 +3,16 @@ Mexicourbano::Application.routes.draw do
   devise_scope :user do
     get "/users/sign_up",  :to => redirect("/")
   end
-  
+
   devise_for :users
-  
+
   resources :troopers
   resources :advisors
-  resources :admins
   resources :kids
   resources :reports
   resources :logs
-  
-  get 'dashboard/' => 'dashboard#index', :as => :dashboard
+
+  get 'dashboard' => 'dashboard#index', :as => :dashboard
 
   root to: "pages#landing"
 
