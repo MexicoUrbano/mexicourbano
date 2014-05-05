@@ -22,8 +22,8 @@
         <% @reports.each do |report| %>
           <tr>
             <td><%= report.week %></td>
-            <td><%= report.kid.name %></td>
-            <td><%= report.trooper.present? ? report.trooper.name : "N/A" %></td>
+            <td><%= link_to report.kid.name, report.kid %></td>
+            <td><%= link_to report.trooper.name, report.trooper %></td>
             <td><%= report.grade %></td>
             <td><%= report.assistance ? "Si" : "No" %></td>
             <td>
