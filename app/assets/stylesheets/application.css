@@ -94,7 +94,11 @@ body#sessions{
 }
 .dashboard-content {
   padding: 3em;
+  text-align: center;
 }
 .type-section {
   height: 10em;
+}
+.dashboard-content .button.small{
+  margin-top: 2em;
 }
