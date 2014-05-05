@@ -19,6 +19,15 @@ class Report < ActiveRecord::Base
   has_many :activities
 
   validates :kid, presence: true
+  before_save :validate_uniqueness
+
 
   accepts_nested_attributes_for :activities, allow_destroy: true
+
+  def validate_uniqueness
+    query_id = id || 0
+    errors.add(:report, 'El reporte de esta semana para este niño ya fue creado')
+    return !where("week = ? and trooper_id = ? and kid_id = ? and id != ?", week, trooper_id, kid_id, query_id).exists?
+  end
 end
+
