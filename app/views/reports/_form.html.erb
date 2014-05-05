@@ -13,9 +13,6 @@
   <div class="small-12 medium-6 columns">
     <fieldset>
       <h3><strong>Seleccionar Niño</strong></h3>
-      <% if @report.trooper.to_s.empty? %>
-        <p>Este niño no tiene ningun brigadista asignado aún.</p>
-      <% end %>
       <% if current_user.trooper? %>
         <%= f.select :kid_id, Kid.where(trooper_id: current_user.userable_id).collect {|t| [t.name, t.id]}, { include_blank: true}, :class=> 'chosen-select-deselect', "data-placeholder" => "Haz click para seleccionar el niño"  %>
       <% else %>
