@@ -36,6 +36,7 @@ class ReportsController < ApplicationController
       @report = current_user.new(report_params)
     else
       @report = Report.new(report_params)
+      @report.trooper_id = @report.kid.trooper_id
     end
 
     if @report.save
