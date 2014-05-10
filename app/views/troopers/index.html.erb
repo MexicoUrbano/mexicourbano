@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Brigadistas</h2>
+  </div>
+  <div class="small-12 columns">
+    <%= link_to new_trooper_path do %> <%= fa_icon 'plus' %>  Agregar un nuevo brigadista<%end%>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <table class='datatable'>
+      <thead>
+        <th>Nombre</th>
+        <th>Matrícula</th>
+        <th>Asesor</th>
+        <th>Comunidad</th>
+        <th>Opciones</th>
+      </thead>
+      <tbody>
+        <% @troopers.each do |trooper| %>
+          <tr>
+            <td><%= trooper.name %></td>
+            <td><%= trooper.student_number %></td>
+            <td><%= trooper.advisor.name %></td>
+            <td><%= trooper.community %></td>
+            <td>
+              <div class="opciones_tabla">
+              <%= link_to "#{ fa_icon 'eye'} Ver".html_safe, trooper_path(trooper), :class=>"button small" %>
+              <%= link_to "#{ fa_icon 'pencil'} Editar".html_safe, edit_trooper_path(trooper), :class=>"button small" %>
+              <%= link_to "#{ fa_icon 'trash-o'} Eliminar".html_safe, trooper_path(trooper), :method=>"delete", :confirm=>"¿Estas seguro que quieres eliminar este brigadista?", :class=>"button small alert"%>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="small-2 text-center columns">
+    <%= link_to troopers_path(:format=>:csv) do %> <%= fa_icon 'file-text' %> Exportar a CSV <%end%>
+  </div>
+</div>

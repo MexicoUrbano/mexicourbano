@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Niño</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <h3><strong>Datos Personales</strong></h3>
+    <p><strong>Nombre:</strong> <%= @kid.name %></p>
+    <p><strong>Grado Escolar:</strong> <%= @kid.grade_name %></p>
+    <p><strong>Edad:</strong> <%= @kid.age %></p>
+    <hr />
+    <% if @kid.trooper %>
+    <p><strong>Comunidad:</strong> <%= @kid.community %></p>
+    <p><strong>Brigadista:</strong> <%= link_to @kid.trooper.name, trooper_path(@kid.trooper.id)%></p>
+      
+        <p><strong>Asesor:</strong> <% if @kid.trooper.advisor %><%= link_to @kid.trooper.advisor.name, advisor_path(@kid.trooper.advisor.id) %><%else%> N/A <%end%>
+</p>
+    <% else %>
+    <p><strong>Este niño no tiene un brigadista asignado aún</strong></p>
+    <% end %>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <h3><strong>Foto</strong></h3>
+    <%=raw @kid.photo_html %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to "Editar", edit_kid_path(@kid), :class=>"button small"%>
+    <% if can? :destroy, @kid %>
+      <%= link_to "Eliminar", kid_path(@kid), :method=>:delete, :confirm=>"¿Estas seguro que quieres eliminar este niño?", :class=>"button small alert"%>
+    <% end %>
+  </div>
+</div>

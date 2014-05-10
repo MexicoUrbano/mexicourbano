@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Niños</h2>
+  </div>
+  <div class="small-12 columns">
+    <%= link_to new_kid_path do %> <%= fa_icon 'plus' %>  Agregar un nuevo niño<%end%>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <table class='datatable'>
+      <thead>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Grado</th>
+        <th>Comunidad</th>
+        <th>Opciones</th>
+      </thead>
+      <tbody>
+        <% @kids.each do |kid| %>
+          <tr>
+            <td><%= kid.name %></td>
+            <td><%= kid.age %></td>
+            <td><%= kid.grade_name %></td>
+            <td><%= kid.community %></td>
+            <td>
+              <div class="opciones_tabla">
+              <%= link_to "#{ fa_icon 'eye'} Ver".html_safe, kid_path(kid), :class=>"button small" %>
+              <%= link_to "#{ fa_icon 'pencil'} Editar".html_safe, edit_kid_path(kid), :class=>"button small" %>
+              <% if can? :destroy, Kid %>              
+                <%= link_to "#{ fa_icon 'trash-o'} Eliminar".html_safe, kid_path(kid), :method=>"delete", :confirm=>"¿Estas seguro que quieres eliminar este niño?", :class=>"button small alert"%>
+              <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="small-2 text-center columns">
+    <%= link_to kids_path(:format=>:csv) do %> <%= fa_icon 'file-text' %> Exportar a CSV <%end%>
+  </div>
+</div>

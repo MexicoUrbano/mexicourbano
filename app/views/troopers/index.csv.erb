@@ -1,0 +1,4 @@
+nombre,correo,matricula,semestre,comunidad,asesor
+<% @troopers.each do |trooper| %>
+<%= trooper.name %>,<%= trooper.email %>,<%= trooper.student_number %>,<%= trooper.semester %>,"<%= trooper.community %>",<%= trooper.advisor.name %>
+<% end %>

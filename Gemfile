@@ -7,6 +7,11 @@ gem 'rails', '4.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Jquery Datatable Rails
+gem 'jquery-datatables-rails', '~> 1.12.2'
+
+gem 'font-awesome-rails', '~> 4.0.3.2'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -47,6 +52,18 @@ end
 
 gem "figaro"
 gem "unicorn"
+gem "devise"
+gem 'acts_as_user'
+gem 'annotate'
+gem "cancan"
+gem 'will_paginate', '~> 3.0'
+#gem 'compass-rails', '~> 1.1.3'
+#gem 'furatto'
+gem 'foundation-rails'
+gem "carrierwave"
+gem 'mini_magick'
+gem 'chosen-rails', '~> 1.1.0'
+
 group :test do
   gem "cucumber-rails", require: false
   gem "database_cleaner"

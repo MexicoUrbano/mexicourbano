@@ -1,0 +1,7 @@
+<fieldset>
+  <%= link_to "No agregar Actividad", '#', class: "remove_fields pull-right" %>
+  <p><strong><%= f.label :objective, "Objetivo" %></strong><br /><%= f.text_area :objective %></p>
+  <p><strong><%= f.label :grade, "Calificación: "%></strong> <%= f.select :grade, ["A","B","C"] %>
+  <p><strong><%= f.label :observation, "Observaciones: "%></strong><br /><%= f.text_area :observation %>
+  <p class="button small alert"><%= f.label :_destroy do %><strong>Eliminar actividad:</strong> <%= f.check_box :_destroy %><%end%></p>
+</fieldset>

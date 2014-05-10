@@ -1,0 +1,39 @@
+<%= render 'shared/error_messages', :objeto => @advisor %>
+
+<%= form_for @advisor do |f| %>
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <fieldset>
+      <h3><strong>Datos Personales</strong></h3>
+      <p><strong><%= f.label :name, "Nombre:" %></strong> <%= f.text_field :name %></p>
+      <p><strong><%= f.label :phone, "Teléfono:" %></strong> <%= f.text_field :phone %> </p>
+      <p><strong><%= f.label :community, "Comunidad "%></strong> <%= f.select :community, Advisor.communities.collect {|c| [c]}, { include_blank: true} %>
+    </fieldset>
+    <fieldset>
+      <h3><strong>Credenciales de Acceso</strong></h3>
+      <p><strong><%= f.label :email, "Correo:" %></strong> <%= f.text_field :email %></p>
+      <div class="row">
+        <div class="small-12 columns">
+          <%= f.label :password_temp do %>Contraseña:<%= f.password_field :password_temp %><% end %>
+          <small class="infohelper">Dejar en blanco para no cambiar la contraseña.</small>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <fieldset>
+      <h3><strong>Seleccionar Brigadistas</strong></h3>
+      <% if @advisor.troopers.count == 0 %>
+        <p>Este asesor no tiene ningun brigadista asignado aún.</p>
+      <% end %>
+      <%= f.select :trooper_ids, Trooper.all.collect {|t| [t.name, t.id]}, { include_blank: true},:multiple => true, :class=> 'chosen-select-deselect', "data-placeholder" => "Haz click para seleccionar brigadistas"  %>
+    </fieldset>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= f.submit "Guardar", :class=>"button small"%>
+    <%= link_to "Cancelar", :back , :class=>"button small secondary"%>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,46 @@
+<%= render 'shared/error_messages', :objeto => @report %>
+
+<%= form_for @report do |f| %>
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <fieldset>
+      <h3><strong>Datos Generales</strong></h3>
+      <p><strong><%= f.label :week, "Semana:" %></strong> <%= f.select :week, [1,2,3,4,5,6,7,8,9] %></p>
+      <p><%= f.label :assistance do %><strong>Asistencia:</strong> <%= f.check_box :assistance %><%end%></p>
+      <p><strong><%= f.label :grade, "Calificación: "%></strong> <%= f.select :grade, ["A","B","C"] %>
+    </fieldset>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <fieldset>
+      <h3><strong>Seleccionar Niño</strong></h3>
+      <% if current_user.trooper? %>
+        <%= f.select :kid_id, Kid.where(trooper_id: current_user.userable_id).collect {|t| [t.name, t.id]}, { include_blank: true}, :class=> 'chosen-select-deselect', "data-placeholder" => "Haz click para seleccionar el niño"  %>
+      <% else %>
+        <%= f.select :kid_id, Kid.all.collect {|t| [t.name, t.id]}, { include_blank: true}, :class=> 'chosen-select-deselect', "data-placeholder" => "Haz click para seleccionar el niño"  %>
+      <% end %>
+    </fieldset>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <fieldset>
+      <h3><strong>Observaciones Generales</strong></h3>
+      <p><%= f.text_area :general_observations %></p>
+    </fieldset>
+  </div>
+  <div class="small-12 medium-12 columns">
+    <fieldset>
+      <h3><strong>Actividades</strong></h3>
+      <%= f.fields_for :activities do |builder| %>
+        <%= render 'activity_fields', f: builder %>
+      <% end %>
+      <%= link_to_add_fields "<i class='fa fa-plus'></i> Agregar Actividad".html_safe, f, :activities %>
+      </fieldset>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= f.submit "Guardar", :class=>"button small"%>
+    <%= link_to "Cancelar", :back , :class=>"button small secondary"%>
+  </div>
+</div>
+<% end %>
+

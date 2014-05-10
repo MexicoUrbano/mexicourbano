@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>México Urbano</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body id="sessions">
+    <% flash.each do |key, msg| %>
+      <div class="row">
+        <div class="small-8 small-centered columns">
+          <div data-alert class="alert-box info radius">
+            <%= content_tag :div, msg, id: key %>
+            <a href="#" class="close">&times;</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%# if user_signed_in? %>
+      <%#= link_to "Editar Información", edit_user_registration_path %>
+      <%#= link_to "Salir", destroy_user_session_path, method: :delete %>
+    <%# else %>
+      <%#= link_to "Entrar", new_user_session_path %>
+    <%# end %>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

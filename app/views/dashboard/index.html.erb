@@ -1,0 +1,45 @@
+<h1>Dashboard</h1>
+<div class="row dashboard-content">
+  <div class="small-12 large-4 type-section columns">
+    <div class="small-12 large-12">
+      <%= link_to troopers_path do %>
+        <i class="fa fa-flag fa-5x small-12 large-12"></i>
+        <span class="small-12 large-12">Bigadistas</span>
+      <% end %>
+    </div>
+    <div class="small-12 large-12">
+      <%= link_to new_trooper_path, class: "button small" do %>
+        <i class="fa fa-magic"></i>
+        <span>Crear</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="small-12 large-4 type-section columns">
+    <div class="small-12 large-12">
+      <%= link_to advisors_path do %>
+        <i class="fa fa-gavel fa-5x small-12 large-12"></i>
+        <span class="small-12 large-12">Asesores</span>
+      <% end %>
+    </div>
+    <div class="small-12 large-12">
+      <%= link_to new_advisor_path, class: "button small" do %>
+        <i class="fa fa-magic"></i>
+        <span>Crear</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="small-12 large-4 type-section columns">
+    <div class="small-12 large-12">
+      <%= link_to kids_path do %>
+        <i class="fa fa-rocket fa-5x small-12 large-12"></i>
+        <span class="small-12 large-12">Niños</span>
+      <% end %>
+    </div>
+    <div class="small-12 large-12">
+      <%= link_to new_kid_path, class: "button small" do %>
+        <i class="fa fa-magic"></i>
+        <span>Crear</span>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Brigadista</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <h3><strong>Datos Personales</strong></h3>
+    <p><strong>Nombre:</strong> <%= @trooper.name %></p>
+    <p><strong>Semestre:</strong> <%= @trooper.semester %></p>
+    <p><strong>Matricula:</strong> <%= @trooper.student_number %></p>
+    <p><strong>Comunidad:</strong> <%= @trooper.community %></p>
+    <p><strong>Asesor:</strong> <%= link_to @trooper.advisor.name, advisor_path(@trooper.advisor) %></p>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <h3><strong>Niños</strong></h3>
+    <% if @trooper.kids.count == 0 %>
+      <p>Este asesor no tiene ningun brigadista asignado</p>
+    <% end %>
+    <ul>
+      <% @trooper.kids.each do |kid| %>
+        <li><%= link_to kid_path(kid) do %><%= kid.name %><% end %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to "Editar", edit_trooper_path(@trooper), :class=>"button small"%>
+    <% if can? :destroy, @trooper %>
+      <%= link_to "Eliminar", trooper_path(@trooper), :method=>:delete, :confirm=>"¿Estas seguro que quieres eliminar este brigadista?", :class=>"button small alert"%>
+    <% end %>
+  </div>
+</div>

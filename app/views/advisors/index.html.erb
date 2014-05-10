@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Asesores</h2>
+  </div>
+  <div class="small-12 columns">
+    <%= link_to new_advisor_path do %> <%= fa_icon 'plus' %>  Agregar un nuevo asesor<%end%>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <table class='datatable'>
+      <thead>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Comunidad</th>
+        <th>Opciones</th>
+      </thead>
+      <tbody>
+        <% @advisors.each do |advisor| %>
+          <tr>
+            <td><%= advisor.name %></td>
+            <td><%= advisor.telefono %></td>
+            <td><%= advisor.community %></td>
+            <td>
+              <div class="opciones_tabla">
+              <%= link_to "#{ fa_icon 'eye'} Ver".html_safe, advisor_path(advisor), :class=>"button small" %>
+              <%= link_to "#{ fa_icon 'pencil'} Editar".html_safe, edit_advisor_path(advisor), :class=>"button small" %>
+              <%= link_to "#{ fa_icon 'trash-o'} Eliminar".html_safe, advisor_path(advisor), :method=>"delete", :confirm=>"¿Estas seguro que quieres eliminar este asesor?", :class=>"button small alert"%>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="small-2 text-center columns">
+    <%= link_to advisors_path(:format=>:csv) do %> <%= fa_icon 'file-text' %> Exportar a CSV <%end%>
+  </div>
+</div>
