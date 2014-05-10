@@ -78,20 +78,9 @@ Mexicourbano::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  # CarrierWave setup
+  #CarrierWave
   CarrierWave.configure do |config|
-    config.root = Rails.root.join('tmp')
-    config.cache_dir = 'files'
-    config.permissions = 0777
-
-    config.storage = :fog
-    config.fog_credentials = {
-      :provider => 'AWS', # required
-      :aws_access_key_id => ENV["AWS_KEY_ID"], # required
-      :aws_secret_access_key => ENV["AWS_SECRET_KEY"], # required
-    }
-    config.fog_directory = ENV["AWS_BUCKET_NAME"] # required
-    config.fog_public = true
+    config.storage = :file
   end
 
   #Devise configuration for default url
