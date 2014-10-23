@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.1.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -42,7 +42,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -50,40 +50,39 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "figaro"
-gem "unicorn"
-gem "devise"
+gem 'figaro'
+gem 'devise'
 gem 'acts_as_user'
 gem 'annotate'
-gem "cancan"
+gem 'cancan'
 gem 'will_paginate', '~> 3.0'
-#gem 'compass-rails', '~> 1.1.3'
-#gem 'furatto'
+# gem 'compass-rails', '~> 1.1.3'
+# gem 'furatto'
 gem 'foundation-rails'
-gem "carrierwave"
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'chosen-rails', '~> 1.1.0'
 
 group :test do
-  gem "cucumber-rails", require: false
-  gem "database_cleaner"
-  gem "email_spec"
-  gem "shoulda-matchers"
-  gem "selenium-webdriver"
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'shoulda-matchers'
+  gem 'selenium-webdriver'
 end
 
 group :development, :test do
-  gem "rspec-rails"
-  gem "debugger"
-  gem "factory_girl_rails"
-  gem "ffaker"
+  gem 'rspec-rails'
+  gem 'debugger2'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :production do
-  gem "rails_12factor"
+  gem 'rails_12factor'
 end
 
 group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
